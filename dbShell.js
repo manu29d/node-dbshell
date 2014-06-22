@@ -1,6 +1,6 @@
 'use strict';
 
-// Run this file as `[NODE_ENV=env] node dbShell.js`
+// Run this file as `[NODE_ENV=env] node dbShell.js [./path/to/config/file] [./path/to/models/directory]`
 
 var repl = require('repl'),
 	path = require('path'),
@@ -15,8 +15,9 @@ var context = repl.start({}).context,
 	ctx = {};
 
 // Load the config
-var config = require('./lib/config/config');
-ctx.config = config;
+var configPath = process.argv[2] || './lib/config/config',
+	config = require(configPath.replace(/\.js/, ''));
+	ctx.config = config;
 
 
 // Connect the db according to config
@@ -24,7 +25,7 @@ mongoose.connect(config.mongo.uri, config.mongo.options);
 
 
 // Requiring all Models.
-var modelsPath = path.join(__dirname, 'lib/models');
+var modelsPath = path.join(__dirname, (process.argv[3] || './lib/models'));
 
 fs.readdirSync(modelsPath).forEach(function (file) {
   if (/(.*)\.(js$|coffee$)/.test(file)) {
