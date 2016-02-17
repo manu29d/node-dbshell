@@ -1,3 +1,6 @@
+Obsolete | Unmaintained. Working on a new version.
+============
+This script is for an outdated version of the generator
 node-dbshell
 ============
 [Gist](https://gist.github.com/manu29d/ced4a558abf2fa654bff)<br />
