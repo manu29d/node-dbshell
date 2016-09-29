@@ -1,9 +1,6 @@
-Obsolete | Unmaintained. Working on a new version.
-============
-This script is for an outdated version of the generator
 node-dbshell
 ============
-[Gist](https://gist.github.com/manu29d/ced4a558abf2fa654bff)<br />
+[Gist](https://gist.github.com/manu29d/2df6a6cb2cbbac8e13c6f512db61d0ad)<br />
 This is a script to provide db shell for [generator-angular-fullstack](https://www.npmjs.org/package/generator-angular-fullstack) with mongoose.<br />
 It loads all your models and their schemas as defined with mongoose along with your config and establishes a databse connection to mongodb as defined by the config.<br />
 After loading the shell you can run [mongoose queries](http://mongoosejs.com/docs/queries.html) on your models like<br />
@@ -14,6 +11,6 @@ After loading the shell you can run [mongoose queries](http://mongoosejs.com/doc
 ```
   
  <h3>How to use</h3>
- 1. Include this file in your applications folder.
+ 1. Include `console.js` file in the root folder of your project.
  2. Make sure the config paths are correct.
- 3. Run this file as `[NODE_ENV=env] node dbShell.js [/path/to/config/file] [/path/to/models/directory]`
+ 3. Run this file as `node console.js`
